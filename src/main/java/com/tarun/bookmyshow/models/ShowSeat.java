@@ -15,9 +15,6 @@ public class ShowSeat extends BaseModel{
     @JoinColumn(name = "seat_id")
     private Seat seat;
 
-    @OneToOne
-    private User user;
-
     @Enumerated(value = EnumType.ORDINAL)
     private SeatStatus seatStatus;
 

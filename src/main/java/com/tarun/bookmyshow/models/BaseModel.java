@@ -12,5 +12,5 @@ public class BaseModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    protected int id;
+    protected Integer id;
 }

@@ -1,8 +1,6 @@
 package com.tarun.bookmyshow.models;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.List;
@@ -17,4 +15,8 @@ public class Movie extends BaseModel{
 
     @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL)
     private List<Show> shows;
+
+    @ElementCollection
+    @Enumerated(value = EnumType.ORDINAL)
+    private List<Feature> features;
 }
