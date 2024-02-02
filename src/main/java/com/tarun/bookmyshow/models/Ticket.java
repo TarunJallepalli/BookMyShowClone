@@ -2,6 +2,7 @@ package com.tarun.bookmyshow.models;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.ToString;
 
 import java.util.Date;
 import java.util.List;
@@ -21,4 +22,14 @@ public class Ticket extends BaseModel{
     private Date timeOfBooking;
 
     private double price;
+
+    @Override
+    public String toString() {
+        return "Ticket{" +
+                "user=" + user +
+                ", showSeatList=" + showSeatList.get(0).getSeat() +
+                ", timeOfBooking=" + timeOfBooking +
+                ", price=" + price +
+                '}';
+    }
 }

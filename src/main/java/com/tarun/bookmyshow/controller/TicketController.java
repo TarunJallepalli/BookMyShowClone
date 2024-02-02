@@ -16,7 +16,7 @@ public class TicketController {
     @Autowired
     private TicketService ticketService;
 
-    private BookTicketResponseDto BookTicket(BookTicketRequestDto bookTicketRequestDto) {
+    public BookTicketResponseDto bookTicket(BookTicketRequestDto bookTicketRequestDto) {
 
         try {
             validateRequest(bookTicketRequestDto.getShowSeatIds(), bookTicketRequestDto.getUserId());

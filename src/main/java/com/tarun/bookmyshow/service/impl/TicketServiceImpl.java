@@ -28,6 +28,7 @@ public class TicketServiceImpl implements TicketService {
 
 
     @Override
+    @Transactional(isolation = Isolation.SERIALIZABLE)
     public Ticket bookTicket(List<Integer> showSeatIds, Integer userId) throws Exception {
 
         // check for valid userId
@@ -56,7 +57,6 @@ public class TicketServiceImpl implements TicketService {
         return ticket;
     }
 
-    @Transactional(isolation = Isolation.SERIALIZABLE)
     protected List<ShowSeat> getAvailableShowSeats(List<Integer> showSeatIds) throws Exception {
 
         List<ShowSeat> showSeats = showSeatRepo.findShowSeatByIdIn(showSeatIds);

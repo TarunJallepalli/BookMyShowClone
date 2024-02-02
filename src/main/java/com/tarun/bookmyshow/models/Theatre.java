@@ -1,5 +1,6 @@
 package com.tarun.bookmyshow.models;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
@@ -15,7 +16,7 @@ public class Theatre extends BaseModel{
 
     private String address;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "theatre_id")
     private List<Screen> screens;
 }

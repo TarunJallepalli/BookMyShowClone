@@ -11,7 +11,7 @@ public class Screen extends BaseModel{
 
     private String name;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "screen_id")
     private List<Seat> seats;
 

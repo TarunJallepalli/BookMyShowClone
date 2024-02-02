@@ -11,7 +11,8 @@ import java.util.List;
 @Table(name = "shows")
 public class Show extends BaseModel{
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "shows")
     private Movie movie;
 
     @ManyToOne
