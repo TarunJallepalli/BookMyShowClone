@@ -34,6 +34,10 @@ public class TicketController {
             throw new Exception("No Tickets Booked");
         }
 
+        if(showSeatIds.size() > 10) {
+            throw new Exception("Maximum of 10 tickets can be booked per transaction");
+        }
+
         if(Objects.isNull(userId) || userId < 0) {
             throw new Exception("Invalid user Id");
         }
